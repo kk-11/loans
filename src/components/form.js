@@ -34,31 +34,35 @@ export default function Form({ loans = [], setLoans, active, toggleForm }) {
       onSubmit={handleSubmit}
       className={clsx(s.form, active ? s.active : null)}
     >
-      <label>Creditor Name:</label>
+      <label className={s.label}>Creditor Name:</label>
       <input
         type="text"
+        className={s.input}
         value={creditor}
         onChange={(evt) => handleChange(evt, "creditor")}
       />
-      <label>Loan Amount:</label>
+      <label className={s.label}>Loan Amount:</label>
       <input
         type="number"
+        className={s.input}
         value={amount}
         onChange={(evt) => handleChange(evt, "amount")}
       />
-      <label>Monthly Fees:</label>
+      <label className={s.label}>Monthly Fees:</label>
       <input
         type="number"
+        className={s.input}
         value={fees}
         onChange={(evt) => handleChange(evt, "fees")}
       />
-      <label>APR:</label>
+      <label className={s.label}>APR:</label>
       <input
         type="number"
+        className={s.input}
         value={apr}
         onChange={(evt) => handleChange(evt, "apr")}
       />
-      <input type="submit" value="Save" />
+      <input type="submit" value="Save" className={s.submit} />
     </form>
   );
 }

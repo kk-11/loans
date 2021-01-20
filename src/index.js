@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <main className={s.app}>
-      <button className={s.app} onClick={toggleForm}>
+      <button className={s.btn} onClick={toggleForm}>
         Add Loan
       </button>
       <Form

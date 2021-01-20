@@ -4,6 +4,37 @@
     transition: transform 333ms
     display: flex
     flex-direction: column
-    background-color: white
+    background-color: #ffd8ba
+    border: 2px solid #090400
+    border-radius: 5px
+    padding: 20px 50px
+    top: 50%
+    color: #090400
+    z-index: 99
     &.active
-        transform: translateY(0)
+        transform: translateY(-50%)
+    .submit
+        background-color: #bafffb
+        border: 2px solid #090400
+        border-radius: 5px
+        padding: 10px
+        color: #090400
+        font-size: 1.1rem
+        margin: 20px 0 0
+    .label
+        font-weight: bolder
+        margin: 5px 0
+    .input
+        padding: 10px
+        border-radius: 5px
+
+
+@media(min-width: 1024px)
+    .form
+        .submit
+            cursor: pointer
+            transition: background-color 555ms, border-color 555ms, color 555ms
+            &:hover
+                background-color: #090400
+                border-color: 2px solid #bafffb
+                color: #bafffb
