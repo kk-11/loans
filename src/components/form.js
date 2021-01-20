@@ -28,12 +28,17 @@ export default function Form({ loans = [], setLoans, active, toggleForm }) {
       [type]: evt.target.value,
     });
   };
+  const handleClose = (evt) => {
+    evt.preventDefault();
+    toggleForm(evt);
+  };
 
   return (
     <form
       onSubmit={handleSubmit}
       className={clsx(s.form, active ? s.active : null)}
     >
+      <button className={s.close} onClick={handleClose} />
       <label className={s.label}>Creditor Name:</label>
       <input
         type="text"

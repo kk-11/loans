@@ -1,6 +1,6 @@
 .form
     position: absolute
-    transform: translateY(-100vh)
+    transform: translateY(-150vh)
     transition: transform 333ms
     display: flex
     flex-direction: column
@@ -13,6 +13,31 @@
     z-index: 99
     &.active
         transform: translateY(-50%)
+    .close
+        position: absolute
+        top: -35px
+        right: -5px
+        height: 30px
+        width: 30px
+        background-color: transparent
+        border: none
+        &:before, &:after
+            position: absolute
+            background-color: black
+            content: ''
+            height: 5px
+            width: 100%
+            left: 0
+            top: 50%
+            transform: rotate(45deg) translateY(-50%)
+            transform-origin: top
+            transition: transform 555ms
+        &:after
+            left: initial
+            right: 0
+            transition-delay: 100ms
+            transform: rotate(-45deg) translateY(-50%)
+        
     .submit
         background-color: #bafffb
         border: 2px solid #090400
@@ -31,6 +56,15 @@
 
 @media(min-width: 1024px)
     .form
+        .close
+            cursor: pointer
+            &:hover
+                &:before
+                    transform: rotate(405deg) translateY(-50%)
+                &:after
+                    transform: rotate(315deg) translateY(-50%)
+                    
+
         .submit
             cursor: pointer
             transition: background-color 555ms, border-color 555ms, color 555ms
