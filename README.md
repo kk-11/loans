@@ -2,8 +2,9 @@
 
 ### To get started:
 
-npm i && npm run start
-runs on http://localhost:8080/
+`npm i && npm run start`
+
+runs on `http://localhost:8080/`
 
 ### Future considerations
 
