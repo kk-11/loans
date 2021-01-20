@@ -17,4 +17,4 @@ runs on `http://localhost:8080/`
 - Maybe separate table from header and footer so if someone has ALOT of loans then they can see the titles without needing to scroll. How many loans do people usually have?
 - close button for form
 - move localStorage logic to a utils file, and keep closer to top level
-- deal with null values better.
+- deal with null values better. error prompt maybe
