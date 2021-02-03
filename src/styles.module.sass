@@ -7,33 +7,56 @@ body
 .app
     display: flex
     align-items: center
-    justify-content: flex-start
+    justify-content: center
     flex-direction: column
+    height: 100vh
+    overflow: hidden
     background-color: #bafffb
-    padding: 50px 0
-    .btn
-        background-color: #ffd8ba
-        border: 2px solid #090400
-        border-radius: 5px
-        padding: 20px 50px
-        color: #090400
-        font-size: 1.1rem
-        margin: 0 0 30px
+    
+    .svg
+        .circle
+            stroke-dasharray: 277
+            stroke-dashoffset: 277
+            // transform: rotate(0deg)
+            transform-origin: center
+            transition: stroke-dashoffset 1.3s cubic-bezier(.74,0,.24,.99),transform 1.3s cubic-bezier(.74,0,.24,.99)
+            &.active
+                stroke-dashoffset: 0
+                // transform: rotate(90deg)
+        .poly
+            opacity: 0
+            transition: opacity 500ms
+            transition-delay: 2.5s
+            &.active
+                transition-delay: 0ms
+                opacity: 1
+        .text
+            tspan
+                opacity: 0
+                display: block
+                transition: opacity 500ms
+                transition-delay: 1s
+                &:nth-child(4)
+                    transition-delay: 500ms
+                &:nth-child(3)
+                    transition-delay: 1s
+                &:nth-child(2)
+                    transition-delay: 1.5s
+                &:nth-child(1)
+                    transition-delay: 2s
+            &.active
+                tspan
+                    opacity: 1
+                    &:nth-child(1)
+                        transition-delay: 500ms
+                    &:nth-child(2)
+                        transition-delay: 1s
+                    &:nth-child(3)
+                        transition-delay: 1.5s
+                    &:nth-child(4)
+                        transition-delay: 2s
+                        
 
-@media(min-width: 1024px)
-    .app
-        max-width: 500px
-        margin: 50px auto 50px
-        padding: 50px
-        border-radius: 20px
-        box-shadow: 5px 5px 5px #090400;
-        .btn
-            cursor: pointer
-            transition: background-color 555ms, border-color 555ms, color 555ms
-            align-self: flex-start
-            &:hover
-                background-color: #090400
-                border-color: 2px solid #ffd8ba
-                color: #ffd8ba
+
                 
         
