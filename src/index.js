@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import clsx from "clsx";
 
 import s from "./styles.module.sass";
 
@@ -7,12 +8,12 @@ const App = () => {
   const [active, setActive] = useState(true);
   const toggleAnimation = () => {
     setActive(!active);
-    console.log("active: ", active);
   };
   const activeClass = active ? s.active : null;
+
   return (
     <main className={s.app} onClick={toggleAnimation}>
-      <svg viewBox="0 0 100 100" className={`${s.svg} ${activeClass}`}>
+      <svg viewBox="0 0 100 100" className={clsx(s.svg, activeClass)}>
         <circle
           cx="50"
           cy="50"
@@ -20,7 +21,7 @@ const App = () => {
           fill="none"
           stroke="#000000"
           strokeWidth="3"
-          className={`${s.circle} ${activeClass}`}
+          className={clsx(s.circle, activeClass)}
         />
         <polyline
           points="12,73 23,15 39,93"
@@ -28,7 +29,7 @@ const App = () => {
           stroke="#000000"
           strokeWidth="3"
           strokeMiterlimit="10"
-          className={`${s.poly} ${activeClass}`}
+          className={clsx(s.poly, activeClass)}
         >
           {false && (
             <animate
@@ -40,7 +41,7 @@ const App = () => {
           )}
         </polyline>
         <text
-          className={`${s.text} ${activeClass}`}
+          className={clsx(s.text, activeClass)}
           style={{
             fontFamily: "Futura-Medium",
             transform: "translate(34px, 59px)",
