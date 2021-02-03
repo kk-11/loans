@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import s from "./styles.module.sass";
 
 const App = () => {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(true);
   const toggleAnimation = () => {
     setActive(!active);
     console.log("active: ", active);
