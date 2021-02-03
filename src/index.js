@@ -30,12 +30,14 @@ const App = () => {
           strokeMiterlimit="10"
           className={`${s.poly} ${activeClass}`}
         >
-          <animate
-            attributeName="points"
-            dur="1.3s"
-            from="0,0 0,0 0,0"
-            to="12,73 23,15 39,93"
-          />
+          {false && (
+            <animate
+              attributeName="points"
+              dur="1.3s"
+              from="0,0 0,0 0,0"
+              to="12,73 23,15 39,93"
+            />
+          )}
         </polyline>
         <text
           className={`${s.text} ${activeClass}`}
