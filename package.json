@@ -21,7 +21,8 @@
     "clsx": "^1.1.1",
     "gsap": "^3.6.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "use-mediaquery": "^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",

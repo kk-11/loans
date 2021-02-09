@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import useMediaQuery from "use-mediaquery";
+
 import ReactDOM from "react-dom";
 import clsx from "clsx";
-import gsap from "gsap";
 
 import s from "./styles.module.sass";
 
@@ -11,6 +12,8 @@ const App = () => {
     setActive(!active);
   };
   const activeClass = active ? s.active : null;
+
+  const desktop = useMediaQuery("(min-width: 1024px)");
 
   return (
     <main className={s.app} onClick={toggleAnimation}>
@@ -51,17 +54,19 @@ const App = () => {
       </svg>
       <svg viewBox="0 0 100 100" className={clsx(s.svg, activeClass)}>
         <rect
-          width="100"
-          height="200"
-          y="-50"
+          width={desktop ? "400" : "100"}
+          height="300"
+          y={desktop ? "0" : "-60"}
+          x={!desktop ? "0" : "-50"}
           mask="url(#hole)"
           className={s.rect}
         />
         <mask id="hole">
           <rect
-            width="100"
-            height="200"
-            y="-50"
+            width={desktop ? "400" : "100"}
+            height="300"
+            y={desktop ? "0" : "-60"}
+            x={!desktop ? "0" : "-50"}
             fill="white"
             className={s.rectInside}
           />
