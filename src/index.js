@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import clsx from "clsx";
+import gsap from "gsap";
 
 import s from "./styles.module.sass";
 
@@ -23,23 +24,14 @@ const App = () => {
           strokeWidth="3"
           className={clsx(s.circle, activeClass)}
         />
-        <polyline
-          points="12,73 23,15 39,93"
-          fill="none"
+        <path
+          d="M 12,73 23,15 39,93"
           stroke="#000000"
           strokeWidth="3"
+          fill="none"
           strokeMiterlimit="10"
-          className={clsx(s.poly, activeClass)}
-        >
-          {false && (
-            <animate
-              attributeName="points"
-              dur="1.3s"
-              from="0,0 0,0 0,0"
-              to="12,73 23,15 39,93"
-            />
-          )}
-        </polyline>
+          className={clsx(s.path, activeClass)}
+        />
         <text
           className={clsx(s.text, activeClass)}
           style={{
