@@ -50,11 +50,18 @@ const App = () => {
         </text>
       </svg>
       <svg viewBox="0 0 100 100" className={clsx(s.svg, activeClass)}>
-        <rect width="100" height="100" mask="url(#hole)" className={s.rect} />
+        <rect
+          width="100"
+          height="200"
+          y="-50"
+          mask="url(#hole)"
+          className={s.rect}
+        />
         <mask id="hole">
           <rect
             width="100"
-            height="100"
+            height="200"
+            y="-50"
             fill="white"
             className={s.rectInside}
           />
